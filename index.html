@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Party Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Party Planner</h1>
+    </header>
+    <main>
+      <section class="setup">
+        <h2>Setup Your Party</h2>
+        <form id="party-form">
+          <label for="party-date">Party Date</label>
+          <input type="date" id="party-date" required>
+
+          <label for="party-desc">Description</label>
+          <textarea id="party-desc" placeholder="Enter party description" required></textarea>
+
+          <label for="invite-msg">Invite Message</label>
+          <textarea id="invite-msg" placeholder="Enter invite message" required></textarea>
+
+          <button type="submit">Save Party Details</button>
+        </form>
+      </section>
+
+      <section class="invite-preview hidden">
+        <h2>Invite Preview</h2>
+        <p id="preview-date"></p>
+        <p id="preview-desc"></p>
+        <p id="preview-msg"></p>
+      </section>
+
+      <section class="registration hidden">
+        <h2>Join the Party</h2>
+        <form id="join-form">
+          <input type="text" id="first-name" placeholder="First Name" required>
+          <input type="text" id="last-name" placeholder="Last Name" required>
+          <button type="submit">Join</button>
+        </form>
+        <div class="participants">
+          <h3>Participants</h3>
+          <ul id="participants-list"></ul>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

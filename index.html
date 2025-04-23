@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Advanced Party Planner Pro">
+  <meta name="description" content="Advanced Party Planner">
   <title>Party Planner Pro+</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -11,15 +11,54 @@
   <!-- Theme Toggle -->
   <button id="toggle-theme" class="theme-toggle" aria-label="Toggle Dark/Light Mode">🌓</button>
 
-  <!-- Main App Container -->
-  <div id="party-app" class="app-container"></div>
+  <!-- Main App Container with Static Markup -->
+  <div id="party-app" class="app-container">
+    <!-- Party Setup -->
+    <section class="section" id="setup">
+      <div class="section__header">
+        <h2>Setup Your Party</h2>
+        <button class="button" id="export-btn">Export CSV</button>
+      </div>
+      <div class="form-group">
+        <label for="input-date">Date & Time</label>
+        <input type="datetime-local" id="input-date">
+      </div>
+      <div class="form-group">
+        <label for="input-desc">Description</label>
+        <textarea id="input-desc"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="input-msg">Invite Message</label>
+        <textarea id="input-msg"></textarea>
+      </div>
+      <button class="button" id="btn-save">Save Details</button>
+    </section>
 
-  <!-- Confetti Canvas -->
-  <canvas id="confetti" class="confetti-canvas"></canvas>
+    <!-- Invite Preview (Hidden Initially) -->
+    <section class="section hidden" id="preview">
+      <div class="countdown" id="countdown"></div>
+      <h2>Invite Preview</h2>
+      <p><strong>Date:</strong> <span id="preview-date"></span></p>
+      <p><strong>Description:</strong> <span id="preview-desc"></span></p>
+      <p id="preview-msg"></p>
+    </section>
+
+    <!-- Registration (Hidden Initially) -->
+    <section class="section hidden" id="registration">
+      <h2>Join the Party</h2>
+      <input type="text" class="search-input" id="search" placeholder="Search participants...">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+        <input type="text" id="input-first" placeholder="First Name">
+        <input type="text" id="input-last" placeholder="Last Name">
+      </div>
+      <button class="button" id="btn-join">Join</button>
+      <ul class="participants-list" id="participants"></ul>
+    </section>
+  </div>
 
   <!-- Snackbar for undo -->
   <div id="snackbar" class="snackbar hidden" role="alert"></div>
 
-  <script type="module" src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
